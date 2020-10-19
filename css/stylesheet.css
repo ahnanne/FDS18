@@ -1,0 +1,16 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+/* web font import */
+@import(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+/* Normalize Project */
+/* margin 값이 0으로 초기화됨 */
+@import(./fontello.css);
+
+body {
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+    /* 앞에 있는 건 'font'를 의미, 뒤에는 '글꼴군(generic family)'을 의미 */
+}
+
+.skip-nav {
+    display: none;
+}
+/* skip navigation */
