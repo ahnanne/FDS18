@@ -4,13 +4,78 @@
 /* Normalize Project */
 /* margin 값이 0으로 초기화됨 */
 @import(./fontello.css);
+body *, body *::before, body *::after {
+    /* content: ""; */
+    box-sizing: border-box;
+}
+/* 'body 안에 있는' 모든 요소에 border-box 적용 */
 
+html {
+    font-size: 10px;
+}
 body {
     font-family: 'Spoqa Han Sans', 'Sans-serif';
     /* 앞에 있는 건 'font'를 의미, 뒤에는 '글꼴군(generic family)'을 의미 */
+    font-size: 1.4rem;
+    /* root의 값을 기준으로 크기 지정 */
+    /* 글자 크기를 유연하게 지정할 수 있음 */
+    color: #181818;
+    /* #000은 브라우저마다 색이 조금씩 다르게 보임 */
+    background: #fff;
 }
 
 .skip-nav {
     display: none;
 }
 /* skip navigation */
+/* 이하 layout */
+.header, .visual, .main, .slogan {
+    width: 940px;
+    margin: 0 auto;
+}
+.header {
+    background: orange;
+}
+.visual {
+    background: skyblue;
+    height: 120px;
+    /* 이처럼 height가 늘어날 가능성이 없는 요소에만 height 값 지정해서 fix시키면 됨 */
+}
+.main {
+    background: pink;
+    /* display: flex;
+    flex-flow: row nowrap;
+    padding: 30px 0;
+    justify-content: space-between; */
+    padding: 30px 15px;
+    overflow: hidden;
+    min-height: 450px;
+}
+.main>.group {
+    margin: 0 15px;
+    float: left;
+}
+/* .clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+} */
+.main>.group1 {
+    background: cornflowerblue;
+    width: 250px;
+}
+.main>.group2 {
+    background: grey;
+    width: 380px;
+}
+.main>.group3 {
+    background: orangered;
+    width: 190px;
+}
+.slogan {
+    background: magenta;
+}
+.footer {
+    background: yellowgreen;
+    width: 100%;
+}
