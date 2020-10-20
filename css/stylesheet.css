@@ -23,7 +23,12 @@ body {
     /* #000은 브라우저마다 색이 조금씩 다르게 보임 */
     background: #fff;
 }
-
+/* link style */
+a {
+    color: inherit;
+    text-decoration: none;
+    /* 링크 밑줄 제거하는 게 보편적 */
+}
 .skip-nav {
     display: none;
 }
@@ -34,7 +39,36 @@ body {
     margin: 0 auto;
 }
 .header {
-    background: orange;
+    background: blueviolet;
+    position: relative;
+    border-radius: 0 0 15px 15px;
+    /* border-radius: 0 0 50px 50px / 0 0 15px 15px; */
+    /* 좌측 상단부터 시계방향 */
+    /* x축 / y축 */
+    padding: 0 30px;
+}
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 65px;
+}
+/* 안내 링크 목록 */
+.member {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    /* tab키로 탐색 시 outline 표시될 영역 2px씩 남겨두기 */
+    margin: 0;
+    text-align: right;
+}
+.member li {
+    display: inline-block;   
+}
+.member a {
+    display: inline-block;
+    padding: 6px 0;
+    /* 사용자가 터치할 수 있는 하이퍼링크의 영역이 늘어나므로 사용자 편의성 증가 */
 }
 .visual {
     background: skyblue;
