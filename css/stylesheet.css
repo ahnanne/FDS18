@@ -3,7 +3,21 @@
 @import(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 /* Normalize Project */
 /* margin 값이 0으로 초기화됨 */
-@import(./fontello.css);
+@import url("fontello.css");
+
+/* 숨김 제목 및 숨김 콘텐츠 */
+.a11y-hidden {
+    position: absolute;
+    /* absolute로 지정하면 독립적인 블록으로 인식됨 */
+    /* top: -9999px; */
+    /* 이처럼 화면 밖으로 밀어버리는 기법은 초창기에 많이 쓰였지만, 현재는 접근성 측면에서 적절하지 않은 기법 */
+    /* 스크린리더가 화면을 탐색하다가 해당 부분에서 갑자기 스크롤 바가 상단으로 휙 올라가버림 */
+    width: 1px;
+    height: 1px;
+    /* 0px로 만들어버리면 가상 커서가 탐색할 수 있는 영역이 없어져버림 */
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
 body *, body *::before, body *::after {
     /* content: ""; */
     box-sizing: border-box;
@@ -12,6 +26,7 @@ body *, body *::before, body *::after {
 
 html {
     font-size: 10px;
+    
 }
 body {
     font-family: 'Spoqa Han Sans', 'Sans-serif';
@@ -21,7 +36,7 @@ body {
     /* 글자 크기를 유연하게 지정할 수 있음 */
     color: #181818;
     /* #000은 브라우저마다 색이 조금씩 다르게 보임 */
-    background: #fff;
+    background: #ccc;
 }
 /* link style */
 a {
@@ -39,7 +54,7 @@ a {
     margin: 0 auto;
 }
 .header {
-    background: thistle;
+    background: white;
     position: relative;
     border-radius: 0 0 15px 15px;
     /* border-radius: 0 0 50px 50px / 0 0 15px 15px; */
@@ -49,7 +64,7 @@ a {
 }
 .logo {
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 65px;
 }
 /* 안내 링크 목록 */
@@ -69,6 +84,113 @@ a {
     display: inline-block;
     padding: 6px 0;
     /* 사용자가 터치할 수 있는 하이퍼링크의 영역이 늘어나므로 사용자 편의성 증가 */
+}
+/* 이하 navigation */
+.navigation {
+    padding-bottom: 40px;
+}
+.menu {
+    background: linear-gradient(to bottom, #e2984d 0%,#f24029 50%,#f24029 51%,#e2984d 100%);
+    border-top: 2px solid currentColor;
+    margin: 10 0 0 0;
+    padding-left: 220px;
+    list-style: none;
+    height: 47px;
+    border-radius: 0 0 5px 5px;
+
+    /* display: flex;
+    align-items: center; */
+}
+.menu-item {
+    float: left;
+    position: relative;
+}
+.menu-button {
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 700;
+    background: transparent;
+    line-height: 45px;
+    border: 0;
+    border-left: 2px solid rgba(255, 255, 255, .5);
+    /* border-bottom: 2px solid #000; */
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+    /* line-height trick */
+    /* text 줄의 높이를 height와 동일하게 지정하면 컨텐츠가 수직 정렬되는 것처럼 보임 */
+    margin: 0;
+    padding: 0 18px;
+    display: block;
+}
+.menu-act .menu-button::after {
+    content: "";
+    display: block;
+    border-top: 2px solid #000;
+}
+.menu-button:hover {
+    color: #ff0;
+}
+.menu-button:active {
+    color: ff0;
+}
+
+.sub-menu {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+
+    background-color: green;
+    position: absolute;
+    top: 47px;
+    /* left: 0; */
+
+    display: none;
+    white-space: nowrap;
+}
+.menu-act .sub-menu {
+    display: block;
+}
+.sub-menu li {
+    display: inline-block;
+    
+}
+.sub-menu a {
+    display: inline-block;
+    padding: 8px 0;
+    margin-right: 10px;
+}
+.sub-menu a::before {
+    content: '\f192';
+    font-family: 'fontello';
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+}
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+    content: '\e800';
+}
+.sub-menu1 {
+    left: 0;
+}
+.sub-menu2 {
+    left: 0;
+}
+.sub-menu3 {
+    left: 0;
+}
+.sub-menu4 {
+    right: 0;
+}
+.sub-menu5 {
+    right: 0;
+}
+.sub-menu6 {
+    right: 0;
+}
+.menu-act .sub-menu {
+    /* display: block; */
 }
 .visual {
     background: skyblue;
