@@ -39,7 +39,7 @@ a {
     margin: 0 auto;
 }
 .header {
-    background: blueviolet;
+    background: thistle;
     position: relative;
     border-radius: 0 0 15px 15px;
     /* border-radius: 0 0 50px 50px / 0 0 15px 15px; */
