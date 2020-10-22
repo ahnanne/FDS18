@@ -148,7 +148,40 @@
   <!-- 에밋문법 작성 시 div 태그 생략하고 클래스명만 입력해도 됨 -->
   <!-- 에밋문법 작성 시 중괄호 안은 text node로 출력됨 -->
   <main class="main clearfix">
-    <div class="group group1">group1</div>
+    <div class="group group1">
+      <section class="login">
+        <h2 class="login-heading">로그인</h2>
+        <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="login-form">
+          <!-- 무료 서비스 -->
+          <fieldset>
+            <legend>회원 로그인 폼</legend>
+            <div class="user-email">
+              <label for="userEmail">아이디</label>
+              <input type="email" id="userEmail" name="userEmail" placeholder="이메일" required>
+            </div>
+            <div class="user-pw">
+              <label for="userPw">비밀번호</label>
+              <input type="password" id="userPw" name="userPw" placeholder="8자리 이상" required>
+            </div>
+            <button class="btn-login" type="submit">로그인</button>
+            <!-- input:button과 button은 취향 차이 -->
+          </fieldset>
+        </form>
+
+        <ul class="login-member">
+          <li class="signup">
+            <span class="icon-right-open" aria-hidden="true"></span>
+            <!-- fontello는 aria-hidden 속성 주지 않아도 스크린리더가 읽지 않음 -->
+            <!-- 스크린리더가 역슬래시 안읽는 점을 이용했기 때문 -->
+            <a href="#">회원가입</a>
+          </li>
+          <li class="find-pw">
+            <span class="icon-right-open" aria-hidden="true"></span>
+            <a href="#">아이디/비밀번호 찾기</a>
+          </li>
+        </ul>
+      </section>
+    </div>
     <div class="group group2">group2</div>
     <div class="group group3">group3</div>
   </main>
