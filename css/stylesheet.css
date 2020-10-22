@@ -233,12 +233,46 @@ a {
         transform: translate(400px, 75px);
     }
 }
+@keyframes bgAni {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 
 .visual {
     position: relative;
-    background: skyblue;
     height: 120px;
     /* 이처럼 height가 늘어날 가능성이 없는 요소에만 height 값 지정해서 fix시키면 됨 */
+}
+.visual::before,
+.visual::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+.visual::before {
+    background-image: url(./images/ani_flower_01.png), url(./images/ani_flower_02.png);
+    background-position: 0 -10px, 670px 0;
+    animation-name: bgAni;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.visual::after {
+    background-image: url(./images/ani_flower_03.png), url(./images/ani_flower_04.png);
+    background-position: 300px 0, 800px 0;
+    animation-name: bgAni;
+    animation-duration: 1500ms;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .visual-text {
     /* position: absolute; */
@@ -249,7 +283,6 @@ a {
     animation-fill-mode: forwards;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 500px;
-    background-color: blueviolet;
 }
 .main {
     background: pink;
