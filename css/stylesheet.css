@@ -421,7 +421,6 @@ a {
 
 /* 유효성 검사 배너 */
 .validation-list {
-    background-color: yellow;
     margin: 25px 0 0 0;
     list-style-type: none;
     padding-left: 0;
@@ -433,6 +432,7 @@ a {
     /* 그라디언트 효과를 background image보다 뒤에 주고 싶기 때문에 더 나중에 작성 */
     padding: 8px 10px 8px 50px;
     display: block;
+    margin-top: 10px;
 }
 .validation-list a:hover, 
 .validation-list a:focus {
