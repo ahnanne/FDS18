@@ -419,6 +419,26 @@ a {
     color: #f36010;
 }
 
+/* 유효성 검사 배너 */
+.validation-list {
+    background-color: yellow;
+    margin: 25px 0 0 0;
+    list-style-type: none;
+    padding-left: 0;
+}
+.validation-list a {
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    background: url(./images/validation_icon.png) 25px 50% / 20px 20px no-repeat, linear-gradient(to top, #eee, #ccc);
+    /* 그라디언트 효과를 background image보다 뒤에 주고 싶기 때문에 더 나중에 작성 */
+    padding: 8px 10px 8px 50px;
+    display: block;
+}
+.validation-list a:hover, 
+.validation-list a:focus {
+    color: #f24029;
+}
+
 .slogan {
     background: magenta;
 }
