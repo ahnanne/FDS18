@@ -144,7 +144,6 @@ a {
     padding-left: 0;
     list-style: none;
 
-    background-color: green;
     position: absolute;
     top: 47px;
     /* left: 0; */
@@ -290,7 +289,7 @@ a {
     width: 500px;
 }
 .main {
-    background: pink;
+    background: #fff;
     /* display: flex;
     flex-flow: row nowrap;
     padding: 30px 0;
@@ -309,16 +308,115 @@ a {
     display: block;
 } */
 .main>.group1 {
-    background: cornflowerblue;
     width: 250px;
 }
 .main>.group2 {
-    background: grey;
     width: 380px;
 }
 .main>.group3 {
-    background: orangered;
     width: 190px;
+}
+/* login */
+.login {
+    background: radial-gradient(circle at right top, #e2984d, #f24029);
+    /* 우상단부터 gradient 시작 */
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 0 #aaa;
+    padding: 15px 10px;
+}
+.login-heading {
+    margin: 0;
+    color: #ff0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-indent: 10px;
+}
+.login-form {
+    margin-top: 10px;
+    padding: 10px 10px 0 10px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+}
+.login-form fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.user-email * {
+    vertical-align: middle;
+}
+/* vertical-align은 text-align과 달리, inline 요소에 직접 선언하는 속성이기 때문에 .user-email 내의 모든 요소에 선언하기 위해 전체 선택자를 사용함 */
+
+.login-form label {
+    display: inline-block;
+    width: 4em;
+}
+.login-form input {
+    width: 95px;
+    height: 22px;
+    border: 1px solid #ccc;
+    padding: 1px 1px 1px 0.5em;
+}
+.btn-login {
+    width: 50px;
+    height: 50px;
+    padding: 0 5px;
+    border-radius: 3px;
+    border: 0;
+    background-color: #f36010;
+    color: #fff;
+    position: absolute;
+    top: 1.5px;
+    right: -2px;
+    /* right 기준 좌표는 과거에는 버그가 많았음 */
+}
+
+.user-email *,
+.user-pw * {
+    vertical-align: middle;
+}
+.user-email,
+.user-pw {
+    margin-bottom: 5px;
+}
+
+
+.login-member {
+    background: #fff;
+    padding: 2px 10px;
+    margin: 0;
+    list-style: none;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex: row nowrap;
+    
+    /* 회원가입과 아이디비번찾기가 한줄에 오도록 */
+    
+    /* white-space: nowrap; */
+    /* icon도 text 요소이므로 white-space 적용됨 */
+    /* 하지만 그리드 상 간격이 안맞으므로 여기선 다른 방법을 사용하기로 함 */
+    letter-spacing: -1px;
+    justify-content: space-between;
+    text-indent: -3px;
+}
+.login-member a {
+    display: block;
+    /* 아니면 그냥 inline-block으로 지정해도 됨 */
+    padding: 8px 0;
+}
+/* 위 a 태그에 block 속성을 부여한 경우 아래처럼 선언해줘야 원하는대로 정렬이 됨 */
+/* inline-block으로 지정한 경우에는 쓸 필요 없음 */
+.login-member li {
+    display: flex;
+    flex: row nowrap;
+    align-items: center;
+}
+.login-member .icon-right-open {
+    color: #f36010;
 }
 
 .slogan {
