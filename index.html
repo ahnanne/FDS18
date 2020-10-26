@@ -143,7 +143,7 @@
     </nav>
   </header>
   <div class="visual">
-     <p class="visual-text">Web Standards &amp; Accessibility</p>
+    <p class="visual-text">Web Standards &amp; Accessibility</p>
   </div>
   <!-- 에밋문법 작성 시 div 태그 생략하고 클래스명만 입력해도 됨 -->
   <!-- 에밋문법 작성 시 중괄호 안은 text node로 출력됨 -->
@@ -199,7 +199,7 @@
       </section>
       <section class="term">
         <h2 class="term-heading">웹 관련 용어</h2>
-        <dl class="term-list">             
+        <dl class="term-list">
           <div class="term-div clearfix">
             <dt class="term-list-subject">웹 표준 이란?</dt>
             <dd class="term-list-thumbnail">
@@ -221,7 +221,19 @@
         </dl>
       </section>
     </div>
-    <div class="group group2">group2</div>
+    <div class="group group2">
+      <h2 class="a11y-hidden">검색</h2>
+      <form class="search-form" method="POST" action="https://formspree.io/seulbinim@gmail.com">
+        <fieldset>
+          <legend>검색 폼</legend>
+          <div class="search-form-container">
+            <label for="search"><span class="icon-search" aria-hidden="true"></span>자료검색</label>
+            <input id="search" type="search" name="search" placeholder="검색어를 입력하세요." autocomplete=off required>
+            <button class="btn-search" type="submit">검색</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
     <div class="group group3">group3</div>
   </main>
   <div class="slogan">slogan</div>
