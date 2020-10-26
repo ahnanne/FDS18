@@ -471,7 +471,7 @@ a {
 .clearfix {
     margin-left: 0;
 }
-.clearfix:nth-child(odd) dt {
+.term-div:nth-child(odd) dt {
     float: right;
     font-size: 1.4rem;
     font-weight: 400;
@@ -481,7 +481,7 @@ a {
     width: 147px;
     line-height: 1;
  }
-.clearfix:nth-child(even) dt {
+ .term-div:nth-child(even) dt {
     float: left;
     font-size: 1.4rem;
     font-weight: 400;
@@ -492,21 +492,21 @@ a {
     line-height: 1;
     margin-left: 3px;
  }
-.clearfix:nth-child(odd) .term-list-thumbnail {
+ .term-div:nth-child(odd) .term-list-thumbnail {
      float: left;
      margin-left: 5px;
      margin-right: 0;
  }
- .clearfix:nth-child(even) .term-list-thumbnail {
+ .term-div:nth-child(even) .term-list-thumbnail {
     float: right;
     margin-left: 0;
     margin-right: 5px;
 }
-.clearfix:nth-child(odd) .term-list-thumbnail img
-.clearfix:nth-child(even) .term-list-thumbnail img {
+.term-div:nth-child(odd) .term-list-thumbnail img
+.term-div:nth-child(even) .term-list-thumbnail img {
      display: block;
  }
-.clearfix:nth-child(odd) .term-list-brief {
+.term-div:nth-child(odd) .term-list-brief {
      margin-left: 0;
      margin-right: 0;
      float: right;
@@ -514,7 +514,7 @@ a {
      height: 70px;
      font-size: 1.4rem;
  }
-.clearfix:nth-child(even) .term-list-brief {
+ .term-div:nth-child(even) .term-list-brief {
     margin-left: 0;
     margin-right: 0;
     float: left;
