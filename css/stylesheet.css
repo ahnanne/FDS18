@@ -581,6 +581,97 @@ a {
     padding: 0 10px;
 }
 
+/* tab board */
+/* 드러내기 */
+.is-active .notice-list,
+.is-active .pds-list,
+.is-active .notice-more,
+.is-active .pds-more {
+    display: block;
+}
+/* 감추기 */
+.notice-list,
+.pds-list,
+.notice-more,
+.pds-more {
+    display: none;
+}
+
+.board {
+    background-color: lightcoral;
+    position: relative;
+    height: 200px;
+    /* float 해제를 위해 height 값 강제 할당 */
+    margin-top: 20px;
+}
+.tab {
+    float: left;
+    margin: 0;
+}
+.tab a {
+    display: block;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #aaa;
+    background: #ccc linear-gradient(to top, #ccc, #aaa);
+    color: #999;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+.is-active .tab a {
+    color: #f24029;
+    border-color: #f24029 #f24029 #fff #f24029;
+    background: #fff;
+}
+.notice-list,
+.pds-list {
+    background-color: sienna;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 45px;
+}
+section .notice {
+    background-color: violet;
+}
+
+.notice-list li,
+.pds-list li {
+    background-color: honeydew;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.notice-list li>a,
+.pds-list li>a {
+    background-color: turquoise;
+    border: 1px solid whitesmoke;
+    /* flex-grow: 1; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 280px;
+}
+.notice-list li>time {
+    background-color: green;
+    line-height: 2;
+}
+.notice-more,
+.pds-more {
+    background-color: sandybrown;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    padding: 8px;
+    /* 사용자 환경 측면에서, 터치 가능 영역 늘리기 위해 padding 값 추가 */
+    /* 해당 a 태그에 position 지정하며 블록 요소의 속성을 가지게 되었으므로 padding 값 지정이 가능함 */
+}
+.notice-more::before,
+.pds-more::before {
+    color: hsla(110, 50%, 30%, 1);
+}
+
 .slogan {
     background: magenta;
 }
