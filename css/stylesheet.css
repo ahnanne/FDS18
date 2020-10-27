@@ -443,7 +443,7 @@ a {
 /* term */
 .term {
     width: 248px;
-    height: 240px;
+    height: 250px;
     background: linear-gradient(to top, #eee, #ccc);
     /* background: linear-gradient(#ccc, #eee); */
     /* 시작 지점, 끝 지점 선언 안해도 됨 */
@@ -475,7 +475,7 @@ a {
     float: right;
     font-size: 1.4rem;
     font-weight: 400;
-    color: rgba(10, 90, 160);
+    color: rgba(10, 90, 160, 1);
     display: inline-block;
     margin-bottom: 5px;
     width: 147px;
@@ -485,7 +485,7 @@ a {
     float: left;
     font-size: 1.4rem;
     font-weight: 400;
-    color: rgba(10, 90, 160);
+    color: rgba(10, 90, 160, 1);
     display: inline-block;
     margin-bottom: 5px;
     width: 147px;
