@@ -598,15 +598,26 @@ a {
 }
 
 .board {
-    background-color: lightcoral;
     position: relative;
-    height: 200px;
+    height: 240px;
     /* float 해제를 위해 height 값 강제 할당 */
     margin-top: 20px;
 }
 .tab {
-    float: left;
+    /* float: left; */
     margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.is-active .tab {
+    z-index: 5;
+}
+.notice-heading {
+    left: 0px;
+}
+.pds-heading {
+    left: 73px;
 }
 .tab a {
     display: block;
@@ -625,41 +636,36 @@ a {
 }
 .notice-list,
 .pds-list {
-    background-color: sienna;
+    width: 100%;
     list-style: none;
     padding-left: 0;
     margin: 0;
-    position: absolute;
+    padding-top: 45px;
+    /* position: absolute;
     left: 0;
-    top: 45px;
+    top: 45px; */
+    min-height: 185px;
 }
 section .notice {
-    background-color: violet;
 }
 
 .notice-list li,
 .pds-list li {
-    background-color: honeydew;
     display: flex;
     flex-flow: row nowrap;
+    margin-bottom: 10px;
+
 }
 .notice-list li>a,
 .pds-list li>a {
-    background-color: turquoise;
-    border: 1px solid whitesmoke;
     /* flex-grow: 1; */
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     width: 280px;
 }
-.notice-list li>time {
-    background-color: green;
-    line-height: 2;
-}
 .notice-more,
 .pds-more {
-    background-color: sandybrown;
     position: absolute;
     right: -8px;
     top: -8px;
