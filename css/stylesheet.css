@@ -1,6 +1,6 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 /* web font import */
-@import(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 /* Normalize Project */
 /* margin 값이 0으로 초기화됨 */
 @import url("fontello.css");
@@ -53,7 +53,10 @@ a {
 }
 /* skip navigation */
 /* 이하 layout */
-.header, .visual, .main, .slogan {
+.header,
+.visual,
+.main,
+.slogan {
     width: 940px;
     margin: 0 auto;
 }
@@ -96,7 +99,7 @@ a {
 .menu {
     background: linear-gradient(to bottom, #e2984d 0%,#f24029 50%,#f24029 51%,#e2984d 100%);
     border-top: 2px solid currentColor;
-    margin: 10 0 0 0;
+    margin: 10px 0 0 0;
     padding-left: 220px;
     list-style: none;
     height: 47px;
@@ -130,13 +133,13 @@ a {
 .menu-act .menu-button::after {
     content: "";
     display: block;
-    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
 }
 .menu-button:hover {
     color: #ff0;
 }
 .menu-button:active {
-    color: ff0;
+    color: #ff0;
 }
 /* 이하 sub-menu */
 .sub-menu {
@@ -297,8 +300,10 @@ a {
     padding: 30px 15px;
     overflow: hidden;
     min-height: 450px;
+    margin: 0 auto;
+    border-radius: 15px 15px 0 0;
 }
-.main>.group {
+.group {
     margin: 0 15px;
     float: left;
 }
@@ -307,13 +312,13 @@ a {
     clear: both;
     display: block;
 } */
-.main>.group1 {
+.group1 {
     width: 250px;
 }
-.main>.group2 {
+.group2 {
     width: 380px;
 }
-.main>.group3 {
+.group3 {
     width: 190px;
 }
 /* login */
@@ -392,7 +397,7 @@ a {
     list-style: none;
     border-radius: 0 0 5px 5px;
     display: flex;
-    flex: row nowrap;
+    flex-flow: row nowrap;
     
     /* 회원가입과 아이디비번찾기가 한줄에 오도록 */
     
@@ -412,7 +417,7 @@ a {
 /* inline-block으로 지정한 경우에는 쓸 필요 없음 */
 .login-member li {
     display: flex;
-    flex: row nowrap;
+    flex-flow: row nowrap;
     align-items: center;
 }
 .login-member .icon-right-open {
@@ -599,7 +604,7 @@ a {
 
 .board {
     position: relative;
-    height: 240px;
+    /* height: 240px; */
     /* float 해제를 위해 height 값 강제 할당 */
     margin-top: 20px;
 }
@@ -608,7 +613,6 @@ a {
     margin: 0;
     position: absolute;
     top: 0;
-    left: 0;
 }
 .is-active .tab {
     z-index: 5;
@@ -645,6 +649,7 @@ a {
     left: 0;
     top: 45px; */
     min-height: 185px;
+    background: #fff;
 }
 section .notice {
 }
@@ -675,6 +680,141 @@ section .notice {
 }
 .notice-more::before,
 .pds-more::before {
+    color: hsla(110, 50%, 30%, 1);
+}
+
+/* news */
+
+/* .news {
+    background-color: yellow;
+    margin-top: 20px;
+    position: relative;
+}
+.news h2 {
+    background-color: yellowgreen;
+}
+.news-article {
+    background-color: dodgerblue;
+    height: 160px;
+}
+.news-article-link {
+    background-color: pink;
+    display: block;
+}
+.news-article-subject {
+    background-color: firebrick;
+    float: right;
+    width: 240px;
+    margin: 20px 0 0 0;
+    line-height: 1.5;
+}
+.news-article-date {
+    background-color: seagreen;
+    float: right;
+    width: 240px;
+    margin: 0;
+    line-height: 1.5;
+}
+.news-article-brief {
+    background-color: skyblue;
+    float: right;
+    width: 240px;
+    margin: 0;
+    padding-top: 10px;
+    line-height: 1.5;
+}
+.news-article-thumbnail {
+    background-color: springgreen;
+    margin: 20px 0 0 0;
+    padding: 0 15px 33px 13px;
+    position: absolute;
+    text-align: center;
+}
+.news-article-thumbnail img {
+    margin: 0;
+    box-shadow: 1px 13px 15px rgba(0, 0, 0, .3);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.news-more {
+    background-color: tomato;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    padding: 8px;
+} */
+
+.news {
+    margin-top: 20px;
+    position: relative;
+}
+.news::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ccc linear-gradient(to right, #ccc, #fff);
+}
+.news h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ed702d;
+    margin: 0;
+}
+.news-article {
+    margin-top: 40px;
+}
+.news-article-link {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    'thumbnail subject'
+    'thumbnail date'
+    'thumbnail brief';
+}
+.news-article-subject {
+    margin: 0 0 5px 0;
+    /* grid-area: 1 / 2; */
+    grid-area: subject;
+    font-size: 1.5rem;
+}
+.news-article-date {
+    margin: 0;
+    /* grid-area: 2 / 2; */
+    grid-area: date;
+}
+.news-article-brief {
+    margin: 10px 0 0;
+    /* grid-area: 3 / 2; */
+    grid-area: brief;
+    line-height: 1.5;
+}
+.news-article-thumbnail {
+    margin: 0;
+    /* grid-area: 1 / 1 / 4 / 2; */
+    grid-area: thumbnail;
+    /* text-align: center; */
+}
+.news-article-thumbnail figcaption {
+    margin-right: 18px;
+    text-align: center;
+}
+.news-article-thumbnail img {
+    margin: 0;
+    box-shadow: 1px 13px 15px 0 rgba(0, 0, 0, .3);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.news-more {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    padding: 8px;
+}
+.news-more::before {
     color: hsla(110, 50%, 30%, 1);
 }
 

@@ -149,7 +149,7 @@
   </div>
   <!-- 에밋문법 작성 시 div 태그 생략하고 클래스명만 입력해도 됨 -->
   <!-- 에밋문법 작성 시 중괄호 안은 text node로 출력됨 -->
-  <main class="main clearfix">
+  <main class="main">
     <div class="group group1">
       <section class="login">
         <h2 class="login-heading">로그인</h2>
@@ -246,10 +246,12 @@
             <li><a href="#">W3C 사이트 리뉴얼 및 공지사항</a><time datetime="2020-10-27T14:38:58">2020.10.27</time></li>
             <li><a href="#">KWCAG 2.1 소식</a><time datetime="2020-10-27T14:38:58">2020.10.27</time></li>
             <li><a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a><time datetime="2020-10-27T14:38:58">2020.10.27</time></li>
-            <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a><time datetime="2020-10-27T14:38:58">2020.10.27</time></li>
+            <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a><time datetime="2020-10-27T14:38:58">2020.10.27</time>
+            </li>
           </ul>
           <a class="notice-more icon-plus" href="#" aria-labelledby="noticeHeading" title="공지사항">더보기</a>
           <!-- fallback 측면에서 aria-labelledby와 title 둘 다 지정 -->
+          <!-- title 태그를 이용하면 해당 링크에 마우스오버 시 툴팁 뜸 -->
         </section>
         <section class="pds">
           <h2 class="pds-heading tab">
@@ -261,10 +263,32 @@
             <li><a href="#">예제 샘플 응용해보기</a><time datetime="2020-10-28T14:38:58">2020.10.28</time></li>
             <li><a href="#">웹 접근성 향상을위한 국가 표준 기술 가이드라인</a><time datetime="2020-10-28T14:38:58">2020.10.28</time></li>
             <li><a href="#">로얄티 프리 이미지 자료</a><time datetime="2020-10-28T14:38:58">2020.10.28</time></li>
+
           </ul>
           <a class="pds-more icon-plus" href="#" aria-labelledby="pdsHeading" title="자료실">더보기</a>
           <!-- fallback 측면에서 aria-labelledby와 title 둘 다 지정 -->
         </section>
+      </div>
+      <section class="news">
+        <h2 id="newsHeading" class="news-heading">새소식</h2>
+        <article class="news-article">
+          <a class="news-article-link" href="#">
+            <h3 class="news-article-subject">
+              W3C 사이트가 리뉴얼 되었습니다.
+            </h3>
+            <time class="news-article-date" datetime="2020-10-28T14:19:28">
+              2020.10.28
+            </time>
+            <p class="news-article-brief">
+              디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.
+            </p>
+            <figure class="news-article-thumbnail">
+              <img src="./images/news.gif" alt="" aria-labelledby="newsArticleThumbnail">
+              <figcaption id="newsArticleThumbnail">W3C 리뉴얼</figcaption>
+            </figure>
+          </a>
+        </article>
+        <a class="icon-plus news-more" href="#" aria-labelledby="newsHeading" title="새소식">더보기</a>
       </section>
     </div>
     <div class="group group3">group3</div>

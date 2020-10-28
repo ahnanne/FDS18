@@ -11,3 +11,5 @@ tab.click(function(event) {
     // jQuery의 chaining 기법
 });
 item.addClass('icon-dot-circled');
+
+// main menu interaction
