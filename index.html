@@ -305,15 +305,17 @@
             <button type="button" class="btn-prev">이전 이벤트 보기</button>
             <button type="button" class="btn-next">다음 이벤트 보기</button>
             <!-- WAI-ARIA 활용 -->
-            
+
           </div>
         </section>
         <section class="related">
           <h2 class="related-heading">
             관련 <span class="point-color">사이트</span>
           </h2>
-          <ul class="related-list">
-            <li><a href="#">멀티캠퍼스</a></li>
+          <ul class="related-list" tabindex="0">
+            <!-- tabindex는 .related-list:focus로 애니메이션 추가하기 위함 -->
+            <!-- 여기서, 키보드 포커스 받았을 때 애니메이션 효과 받으며 height 늘어나는 건 굳이 필요한 기능은 아니므로 tabindex 빼도 됨 -->
+            <li><a href="#">패스트 캠퍼스</a></li>
             <li><a href="#">W3C</a></li>
             <li><a href="#">CSS ZenGarden</a></li>
             <li><a href="#">웹접근성 연구소</a></li>
@@ -321,6 +323,7 @@
           </ul>
         </section>
       </div>
+      <div class="test"></div>
     </div>
   </main>
   <div class="slogan">slogan</div>

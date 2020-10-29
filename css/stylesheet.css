@@ -825,7 +825,6 @@ section .notice {
     background: #ccc linear-gradient(#ccc, #eee);
     border: 1px solid #aaa;
     border-radius: 5px;
-    position: relative;
   }
 .point-color {
     color: #ed702d;
@@ -837,6 +836,17 @@ section .notice {
     /* h2 기본값이 bold이긴 하지만 명시적 값으로 선언해두기 */
     margin: 10px;
 }
+.event {
+    position: relative;
+}
+.event::after {
+    content: "";
+    display: block;
+    width: 170px;
+    height: 1px;
+    background-color: #aaa;
+    margin-left: 8px;
+}
 div #eventDetail {
     display: flex;
     flex-flow: column wrap;
@@ -847,9 +857,11 @@ div #eventDetail {
     box-shadow: 5px 5px 0 0 #aaa;
 }
 .event-brief {
-    margin: 5px;
+    margin: 2px 0 12px;
     display: inline-block;
     width: 180px;
+    padding-left: 5px;
+    line-height: 1.5;
 }
 .event-brief em {
     font-style: normal;
@@ -878,6 +890,40 @@ div #eventDetail {
 .btn-event .btn-next {
     background-image: url(./images/back_forward.png);
     background-position: 18px 0;
+}
+.related-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    height: 3rem;
+    overflow: hidden;
+    transition-property: height padding;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+    /* transition: height .3s, padding .3s .3s; */
+}
+/* .related-list li {
+    padding: 3px 15px 2px 5px;
+} */
+.related-list li a {
+    display: block;
+    width: 100%;
+    padding: 0 12px;
+    line-height: 25px;
+}
+.related-list:hover,
+.related-list:focus {
+    height: 147px;
+    padding: 10px 0;
+}
+/* .related-list:focus 부분은 기능 상 별로 필요하진 않음 */
+.test {
+    width: 200px;
+    height: 200px;
+    background-color: black;
 }
 
 .slogan {
