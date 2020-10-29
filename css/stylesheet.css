@@ -71,7 +71,7 @@ a {
 }
 .logo {
     position: absolute;
-    top: 40px;
+    top: 33px;
     left: 65px;
 }
 /* 안내 링크 목록 */
@@ -133,7 +133,7 @@ a {
 .menu-act .menu-button::after {
     content: "";
     display: block;
-    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
 }
 .menu-button:hover {
     color: #ff0;
@@ -461,6 +461,7 @@ a {
 .clearfix::after {
     content: "";
     clear: both;
+    display: block;
 }
 .term h2 {
     font-size: 1.5rem;
