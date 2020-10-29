@@ -766,6 +766,12 @@ body {
 .favorite-more::before{
   color: hsla(110,50%,30%,1);
 }
+
+/* event and related site */
+.gradient-box {
+  background: grey;
+}
+
 /* 슬로건 */
 .slogan {
   position: relative;

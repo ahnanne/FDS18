@@ -16,7 +16,8 @@ legend {
     width: 1px;
     height: 1px;
     /* width, height를 0으로 지정하면 가상 커서가 탐색할 수 있는 영역이 없어져버림 */
-    /* font-size: 0;도 마찬가지로, 탐색 가능 영역이 아예 없어진다는 문제가 있음 */
+    /* font-size: 0;도 마찬가지로, 해당 text의 탐색 영역이 사라져버리므로, 보조기기 사용 시 해당 text 자체가 읽히지 않고 skip되는 문제가 있음 */
+    /* 또한 이는 Google의 웹마스터 가이드라인을 위반하여 black hat을 유발하는 원인이 될 수 있음 */
     overflow: hidden;
     clip-path: polygon(0 0, 0 0, 0 0);
     clip: rect(0 0 0 0);
@@ -435,9 +436,9 @@ a {
     border: 1px solid #aaa;
     background: url(./images/validation_icon.png) 15px 50% / 20px 20px no-repeat, linear-gradient(to top, #eee, #ccc);
     /* 그라디언트 효과를 background image보다 뒤에 주고 싶기 때문에 더 나중에 작성 */
-    padding: 5px 10px 8px 40px;
+    padding: 7px 10px 8px 40px;
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
     height: 32px;
 }
 .validation-list a:hover, 
@@ -817,6 +818,66 @@ section .notice {
 }
 .news-more::before {
     color: hsla(110, 50%, 30%, 1);
+}
+
+/* event and related site */
+.gradient-box {
+    background: #ccc linear-gradient(#ccc, #eee);
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    position: relative;
+  }
+.point-color {
+    color: #ed702d;
+}
+.event-heading,
+.related-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    /* h2 기본값이 bold이긴 하지만 명시적 값으로 선언해두기 */
+    margin: 10px;
+}
+div #eventDetail {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.event-thumbnail img {
+    border: 1px solid #aaa;
+    box-shadow: 5px 5px 0 0 #aaa;
+}
+.event-brief {
+    margin: 5px;
+    display: inline-block;
+    width: 180px;
+}
+.event-brief em {
+    font-style: normal;
+}
+.btn-event {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    margin: 0;
+    height: 18px;
+}
+.btn-prev, 
+.btn-next {
+    width: 18px;
+    cursor: pointer;
+    border: none;
+    padding: 18px 0 0 0;
+    background-color: transparent;
+    overflow: hidden;
+    height: 0;
+    /* padding trick */
+}
+.btn-event .btn-prev {
+    background-image: url(./images/back_forward.png);
+}
+.btn-event .btn-next {
+    background-image: url(./images/back_forward.png);
+    background-position: 18px 0;
 }
 
 .slogan {
