@@ -41,7 +41,7 @@ body {
     /* 글자 크기를 유연하게 지정할 수 있음 */
     color: #181818;
     /* #000은 브라우저마다 색이 조금씩 다르게 보임 */
-    background: #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
+    background: url(./images/bg_flower.png) no-repeat 50% 0, #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
 }
 /* link style */
 a {
@@ -49,10 +49,26 @@ a {
     text-decoration: none;
     /* 링크 밑줄 제거하는 게 보편적 */
 }
-.skip-nav {
-    display: none;
-}
+
 /* skip navigation */
+.skip-nav a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: #181818;
+    color: #fff;
+    text-align: center;
+}
+.skip-nav a:focus {
+    height: auto;
+    outline: 0;
+    padding: 10px 0;
+}
+
 /* 이하 layout */
 .header,
 .visual,
@@ -1079,7 +1095,57 @@ div #eventDetail {
     content: "";
 }
 
+/* footer */
 .footer {
     background: #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
     width: 100%;
+}
+.footer-inner {
+    padding: 15px 70px 15px 180px;
+    position: relative;
+    padding-right: 100px;
+}
+/* footer logo */
+.footer-logo {
+    position: absolute;
+    top: 25px;
+    left: 43px;
+}
+/* guide link list */
+.guide-list {
+    margin: 0;
+    padding: 2px 0 0 17px;
+    list-style: none;
+    background-color: #7b8385;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.guide-list li {
+    float: left;
+    text-transform: uppercase;
+}
+.guide-list li a {
+    display: inline-block;
+    padding: 11px 7px;
+    margin: 0 10px;
+}
+/* address, copyright */
+.address {
+    font-style: normal;
+    margin-top: 10px;
+}
+.address span {
+    margin-right: 10px;
+}
+.copyright {
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+/* HTML & CSS3 logo */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 0;
 }
