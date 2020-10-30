@@ -825,16 +825,18 @@ section .notice {
     background: #ccc linear-gradient(#ccc, #eee);
     border: 1px solid #aaa;
     border-radius: 5px;
+    padding: 10px;
   }
 .point-color {
     color: #ed702d;
 }
 .event-heading,
-.related-heading {
+.related-heading,
+.favorite-heading {
     font-size: 1.6rem;
     font-weight: 700;
     /* h2 기본값이 bold이긴 하지만 명시적 값으로 선언해두기 */
-    margin: 10px 10px 0 10px;
+    margin: 0;
 }
 .event {
     position: relative;
@@ -842,15 +844,14 @@ section .notice {
 .event::after {
     content: "";
     display: block;
-    width: 170px;
+    width: 167px;
     height: 1px;
     background-color: #aaa;
-    margin-left: 8px;
+    margin-bottom: 10px;
 }
 div #eventDetail {
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
 }
 .event-thumbnail img {
     border: 1px solid #aaa;
@@ -860,7 +861,6 @@ div #eventDetail {
     margin: 2px 0 12px;
     display: inline-block;
     width: 180px;
-    padding-left: 5px;
     line-height: 1.5;
 }
 .event-brief em {
@@ -894,7 +894,6 @@ div #eventDetail {
 .related-list {
     list-style: none;
     padding: 0;
-    margin: 10px;
     background-color: #fff;
     border-radius: 5px;
     border: 1px solid #aaa;
@@ -920,10 +919,117 @@ div #eventDetail {
     padding: 10px 0;
 }
 /* .related-list:focus 부분은 기능 상 별로 필요하진 않음 */
-.test {
-    width: 200px;
-    height: 200px;
-    background-color: black;
+
+/* favorite sites */
+.favorite {
+    position: relative;
+    margin-top: 20px;
+}
+.favorite-list {
+    margin: 10px 0 0;
+    padding-left: 0;
+    list-style: none;
+
+    counter-reset: listCounter;
+}
+
+.favorite-list li {
+    margin-top: 8px;
+    counter-increment: listCounter;
+    /* 이하 flex 배치 */
+    /* display: flex;
+    justify-content: space-between; */
+    
+    position: relative;
+}
+.favorite-list li a {
+    /* 이하 flex 배치 */
+    /* margin-right: auto; */
+    /* 링크 영역 자체를 늘리고 싶다면 아래 코드 선언 */
+    /* margin-right: 5px; */
+    /* flex-grow: 1; */
+    display: block;
+    margin: 0 10px 0 20px;
+}
+.favorite-list li em {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -5px;
+}
+.favorite-list li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    content: counter(listCounter);
+    display: inline-block;
+    width: 15px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 300;
+    margin-right: 5px;
+    background-color: #999;
+    border-radius: 3px;
+}
+/*
+.favorite-list li:nth-child(1)::before {
+    content: "1";
+}
+.favorite-list li:nth-child(2)::before {
+    content: "2";
+}
+.favorite-list li:nth-child(3)::before {
+    content: "3";
+}
+.favorite-list li:nth-child(4)::before {
+    content: "4";
+}
+*/
+.up, 
+.down, 
+.stop {
+    display: inline-block;
+    font-style: normal;
+    /* em 태그로 wrapping 했으므로 font-style 초기화 */
+    width: 9px;
+    background-image: url(./images/rank.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 11px 0 0 0;
+    height: 0;
+    /* 이렇게 padding trick을 사용할 때, height 값은 padding 값과 동일하게 주어도 무관함 */
+}
+.up {
+    background-position: top;
+    /* background-position: 0 top; */
+    /* background-position: 0%; */
+    /* background-position: 0 0%; */
+}
+.down {
+    background-position: bottom;
+    /* background-position: 0 bottom; */
+    /* background-position: 100%; */
+    /* background-position: 0 100%; */
+}
+.stop {
+    background-position: center;
+    /* background-position: 0 center; */
+    /* background-position: 50%; */
+    /* background-position: 0 50%; */
+}
+
+.favorite-more {
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    padding: 8px;
+}
+.favorite-more::before {
+    color: hsla(110, 50%, 30%, 1);
 }
 
 .slogan {
