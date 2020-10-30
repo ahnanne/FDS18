@@ -57,7 +57,8 @@ a {
 .header,
 .visual,
 .main,
-.slogan {
+.slogan, 
+.footer-inner {
     width: 940px;
     margin: 0 auto;
 }
@@ -903,6 +904,7 @@ div #eventDetail {
     transition-timing-function: linear;
     transition-duration: .3s;
     /* transition: height .3s, padding .3s .3s; */
+    margin-bottom: 0;
 }
 /* .related-list li {
     padding: 3px 15px 2px 5px;
@@ -1035,8 +1037,8 @@ div #eventDetail {
 /* slogan */
 .slogan {
     position: relative;
-    padding: 0 70px 20px 180px;
-    margin-top: 50px;
+    padding: 0 70px 10px 180px;
+    margin-top: 30px;
 }
 .slogan-heading {
     width: 110px;
@@ -1063,7 +1065,6 @@ div #eventDetail {
     display: inline-block;
     width: 750px;
     margin: 0;
-    vertical-align: top;
     line-height: 2;
     padding-right: 80px;
     color: #a0978a;
