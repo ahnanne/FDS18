@@ -396,6 +396,7 @@ a {
     top: 1.5px;
     right: -2px;
     /* right 기준 좌표는 과거에는 버그가 많았음 */
+    font-size: 12px;
 }
 
 .user-email *,
@@ -425,6 +426,7 @@ a {
     letter-spacing: -1px;
     justify-content: space-between;
     text-indent: -3px;
+    font-size: 13px;
 }
 .login-member a {
     display: block;
@@ -973,7 +975,7 @@ div #eventDetail {
     position: absolute;
     right: 0;
     top: 50%;
-    margin-top: -5px;
+    margin-top: -7px;
 }
 .favorite-list li::before {
     position: absolute;
